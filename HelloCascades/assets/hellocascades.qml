@@ -15,8 +15,11 @@
 
 // Import all our cascades functions.
 import bb.cascades 1.0
-
+NavigationPane {
+    id: npane
 Page {
+    id: home
+
     // A container is used to gather visual items together.
     Container {
         // A DockLayout is applied to the main container, making it
@@ -47,7 +50,7 @@ Page {
             // A text label with the comforting hello world text
             Label {
                 // Set the label text, by using qsTr() the string can be translated.
-                text: qsTr("Hello World")
+                text: qsTr("MillionSec")
                 
                 // The Label text style defined in the attachedObjects below
                 textStyle.base: helloTextStyle.style
@@ -56,6 +59,10 @@ Page {
                 verticalAlignment: VerticalAlignment.Center
                 horizontalAlignment: HorizontalAlignment.Center
             }// Label
+            
+            onTouch: {
+                npane.push("second")
+            }
         }// Container
     }// Container
     
@@ -67,11 +74,15 @@ Page {
             id: helloTextStyle
             base: SystemDefaults.TextStyles.BigText
             fontWeight: FontWeight.Bold
-            color: Color.create("#ff5D5D5D")
+            color: Color.create("#FFFF5D5D")
         },
         ImagePaintDefinition {
             id: backgroundPaint
             imageSource: "asset:///images/background.png"
         }
     ]
+    
+    
 }// Page 
+
+}

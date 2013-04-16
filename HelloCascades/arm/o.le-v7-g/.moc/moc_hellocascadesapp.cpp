@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'hellocascadesapp.h'
 **
-** Created: Tue Apr 16 15:37:11 2013
+** Created: Tue Apr 16 18:54:29 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)
 **
 ** WARNING! All changes made in this file will be lost!
