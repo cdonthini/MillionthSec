@@ -61,7 +61,8 @@ Page {
             }// Label
             
             onTouch: {
-                npane.push("second")
+                var second = secondDefinition.createObject();
+                npane.push(second)
             }
         }// Container
     }// Container

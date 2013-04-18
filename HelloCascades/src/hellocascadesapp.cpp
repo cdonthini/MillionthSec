@@ -22,7 +22,7 @@ using namespace bb::cascades;
 HelloCascadesApp::HelloCascadesApp()
 {
     // Obtain a QMLDocument and load it into the qml variable, using build patterns.
-    QmlDocument *qml = QmlDocument::create("asset:///hellocascades.qml");
+    QmlDocument *qml = QmlDocument::create("asset:///second.qml");
 
     // If the QML document is valid, we process it.
     if (!qml->hasErrors()) {

@@ -1,6 +1,12 @@
 import bb.cascades 1.0
 
 Page {
+    id: second
+    titleBar: TitleBar {
+        id: titleBar
+        visibility: ChromeVisibility.Visible
+        title: "Home"
+    }
     Container {
         layout: StackLayout {
         }
