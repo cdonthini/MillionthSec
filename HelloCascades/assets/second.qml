@@ -1,46 +1,79 @@
 import bb.cascades 1.0
 
-Page {
-    id: second
-    titleBar: TitleBar {
-        id: titleBar
-        visibility: ChromeVisibility.Visible
-        title: "Home"
-    }
-    Container {
-        layout: StackLayout {
-        }
-        horizontalAlignment: HorizontalAlignment.Center
-        verticalAlignment: VerticalAlignment.Center
-        Label {
-            text: "Pick Your Birth Date"
-            horizontalAlignment: HorizontalAlignment.Center
-            verticalAlignment: VerticalAlignment.Center
+NavigationPane {
+    id: nav
+    Page {
+        id: second
+        titleBar: TitleBar {
+            id: titleBar
+            visibility: ChromeVisibility.Visible
+            title: "Home"
         }
         Container {
-            horizontalAlignment: HorizontalAlignment.Center
-            verticalAlignment: VerticalAlignment.Center
-            DropDown {
-                id: day
-                title: "Date"
-                horizontalAlignment: HorizontalAlignment.Center
-
-                //options:
+            layout: StackLayout {
             }
-        }
-        Container {
+            background: backgroundPaint.imagePaint
             horizontalAlignment: HorizontalAlignment.Center
             verticalAlignment: VerticalAlignment.Center
-            DropDown {
-                id: month
-                title: "Month"
+            visible: true
+            Label {
+                text: "Pick Your Birth Date"
                 horizontalAlignment: HorizontalAlignment.Center
-
-                //options:
+                verticalAlignment: VerticalAlignment.Center
             }
-        }
-        Container {
-            horizontalAlignment: HorizontalAlignment.Center
+            Container {
+                horizontalAlignment: HorizontalAlignment.Center
+                verticalAlignment: VerticalAlignment.Center
+                DropDown {
+                    id: day
+                    title: "Choose your BirthDate"
+                    horizontalAlignment: HorizontalAlignment.Center
+                    Option {
+                        text: "1"
+                        value: "1"
+                    }
+                    Option {
+                        text: "2"
+                        value: "2"
+                    }
+                    Option {
+                        text: "3"
+                        value: "3"
+                    }
+                    Option {
+                        text: "4"
+                        value: "4"
+                    }
+                    Option {
+                        text: "5"
+                        value: "5"
+                    }
+                    Option {
+                        text: "6"
+                        value: "6"
+                    }
+                    Option {
+                        text: "7"
+                        value: "7"
+                    }
+                    Option {
+                        text: "8"
+                        value: "8"
+                    }
+                }
+                Container {
+                    horizontalAlignment: HorizontalAlignment.Center
+                    verticalAlignment: VerticalAlignment.Center
+                    DropDown {
+                        id: month
+                        title: "Month"
+                        horizontalAlignment: HorizontalAlignment.Center
+
+                        //options:
+                    }
+                }
+                Container {
+                    horizontalAlignment: HorizontalAlignment.Center
             verticalAlignment: VerticalAlignment.Center
             DropDown {
                 id: year
@@ -49,6 +82,35 @@ Page {
 
                 //options:
             }
+            Button {
+                id: go
+                text: "GO"
+                verticalAlignment: VerticalAlignment.Center
+                horizontalAlignment: HorizontalAlignment.Center
+                        onClicked: {
+                            var thirdpage = contentPageDefinition.createObject();
+                            nav.push(thirdpage);
+                        }
+                    }
+                }
+            }
+            
+            
         }
     }
+
+attachedObjects: [
+        
+        // This is the definition of the Content page used to create a page in the onTriggered signal-handler above. 
+        ComponentDefinition {
+            id: contentPageDefinition
+            source: "third.qml"
+        }
+    ]
+    
+    onPopTransitionEnded: {
+        // Transition is done destroy the Page to free up memory.
+        page.destroy();
+    }   
+
 }
