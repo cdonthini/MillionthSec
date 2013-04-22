@@ -1,13 +1,16 @@
 import bb.cascades 1.0
 
-NavigationPane {
-    id: npane
-    paneProperties: NavigationPaneProperties {
-        backButton: ActionItem {
-            title: "back"
-            onTriggered: {
-                npane.pop();
-            }
-        }
+Page {
+    id: third
+    titleBar: TitleBar {
+        id: title
+        title: "Second Page"
     }
+    Label {
+        id: titleLabel
+        text: "Second Page"
+        verticalAlignment: VerticalAlignment.Top
+        horizontalAlignment: HorizontalAlignment.Center
+    }
+    
 }

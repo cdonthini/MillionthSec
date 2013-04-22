@@ -28,7 +28,7 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     // Set up the translator.
     QTranslator translator;
     QString locale_string = QLocale().name();
-    QString filename = QString("hellocascades_%1").arg(locale_string);
+    QString filename = QString("millionSec_%1").arg(locale_string);
     if (translator.load(filename, "app/native/qm")) {
         app.installTranslator(&translator);
     }

@@ -74,43 +74,38 @@ NavigationPane {
                 }
                 Container {
                     horizontalAlignment: HorizontalAlignment.Center
-            verticalAlignment: VerticalAlignment.Center
-            DropDown {
-                id: year
-                title: "Year"
-                horizontalAlignment: HorizontalAlignment.Center
+                    verticalAlignment: VerticalAlignment.Center
+                    DropDown {
+                        id: year
+                        title: "Year"
+                        horizontalAlignment: HorizontalAlignment.Center
 
-                //options:
-            }
-            Button {
-                id: go
-                text: "GO"
-                verticalAlignment: VerticalAlignment.Center
-                horizontalAlignment: HorizontalAlignment.Center
-                        onClicked: {
-                            var thirdpage = contentPageDefinition.createObject();
-                            nav.push(thirdpage);
-                        }
+                        //options:
+                    }
+                }
+                Button {
+                    id: go
+                    text: "GO"
+                    verticalAlignment: VerticalAlignment.Center
+                    horizontalAlignment: HorizontalAlignment.Center
+                    onClicked: {
+                        var thirdpage = contentPageDefinition.createObject();
+                        nav.push(thirdpage);
                     }
                 }
             }
-            
-            
         }
     }
+    attachedObjects: [
 
-attachedObjects: [
-        
-        // This is the definition of the Content page used to create a page in the onTriggered signal-handler above. 
+        // This is the definition of the Content page used to create a page in the onTriggered signal-handler above.
         ComponentDefinition {
             id: contentPageDefinition
             source: "third.qml"
         }
     ]
-    
     onPopTransitionEnded: {
         // Transition is done destroy the Page to free up memory.
         page.destroy();
-    }   
-
+    }
 }

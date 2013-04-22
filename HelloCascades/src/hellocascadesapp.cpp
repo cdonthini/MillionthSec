@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 #include "hellocascadesapp.h"
-
+#include <bb/cascades/NavigationPane>
 #include <bb/cascades/QmlDocument>
 #include <bb/cascades/Page>
 
@@ -23,16 +23,18 @@ HelloCascadesApp::HelloCascadesApp()
 {
     // Obtain a QMLDocument and load it into the qml variable, using build patterns.
     QmlDocument *qml = QmlDocument::create("asset:///second.qml");
+    qml->setParent(this);
+    NavigationPane *nav = qml->createRootObject<NavigationPane>();
 
     // If the QML document is valid, we process it.
     if (!qml->hasErrors()) {
 
         // Create the application Page from QMLDocument.
-        Page *appPage = qml->createRootObject<Page>();
+        //Page *appPage = qml->createRootObject<Page>();
 
-        if (appPage) {
+        if (nav) {
             // Set the main scene for the application to the Page.
-            Application::instance()->setScene(appPage);
+            Application::instance()->setScene(nav);
         }
     }
 }
