@@ -60,6 +60,7 @@ NavigationPane {
                         text: "8"
                         value: "8"
                     }
+                    
                 }
                 Container {
                     horizontalAlignment: HorizontalAlignment.Center

@@ -1,4 +1,4 @@
-QMAKE_TARGET  = HelloCascades
+QMAKE_TARGET  = MillionSec
 PROJECT_DIR	  := $(dir $(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST)))
 I18N_DIR	  := $(PROJECT_DIR)/translations
 

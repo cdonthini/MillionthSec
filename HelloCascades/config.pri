@@ -7,11 +7,11 @@ INCLUDEPATH +=  \
     $$BASEDIR/src
 
 SOURCES +=  \
-    $$BASEDIR/src/hellocascadesapp.cpp \
+    $$BASEDIR/src/millionSec.cpp \
     $$BASEDIR/src/main.cpp
 
 HEADERS +=  \
-    $$BASEDIR/src/hellocascadesapp.h
+    $$BASEDIR/src/millionSec.h
 
 lupdate_inclusion {
     SOURCES += \
